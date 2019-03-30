@@ -47,7 +47,8 @@ setup(
     ],
     packages=find_packages(),
     install_requires=(
-        'sphinx'
+        'sphinx>=2.0',
+        'graphml2svg'
     ),
     zip_safe=True
 )
