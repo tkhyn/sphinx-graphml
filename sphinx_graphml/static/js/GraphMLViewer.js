@@ -6,7 +6,7 @@ var isIE = (navigator.appVersion.indexOf("MSIE") != -1);
 var isWin = (navigator.appVersion.toLowerCase().indexOf("win") != -1);
 var isOpera = (navigator.userAgent.indexOf("Opera") != -1);
 
-var rootURL = document.currentScript.getAttribute('src').split('/').slice(0,-2).join('/');
+var rootURL = document.currentScript.baseURI.split('/').slice(0,-1).join('/');
 if (rootURL) {
     rootURL += '/';
 }
@@ -150,8 +150,7 @@ function CreateParams(args) {
   if (!ret["flashvars"]) {
     var flashVarString = "";
     if (flashVars["graphurl"] != null) {
-      var url = rootURL + '_downloads/' + flashVars['graphurl'];
-      flashVarString = flashVarString + "&graphUrl=" + url;
+      flashVarString = flashVarString + "&graphUrl=" + rootURL + flashVars['graphurl'];
     }
     if (flashVars["overview"] != null) {
       flashVarString = flashVarString + "&overview=" + flashVars["overview"];
