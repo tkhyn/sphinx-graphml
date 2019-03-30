@@ -4,7 +4,7 @@ Project versionning info
 
 import re
 
-__version_info__ = (0, 1, 0, 'alpha', 0)
+__version_info__ = (0, 1, 0, 'beta', 2)
 
 
 def get_version(version=__version_info__):
