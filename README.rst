@@ -1,7 +1,7 @@
 sphinx-graphml
 ==============
 
-A ``.graphml`` charts embedding extension for Sphinx_.
+A GraphML charts embedding extension for Sphinx_.
 
 This extensions simply uses the GraphMLViewer_ tool provided by yWorks_. Admittedly, it is based
 on Flash and will no longer be supported from the end of 2020, but this is still the easiest and

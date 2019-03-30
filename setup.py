@@ -29,7 +29,7 @@ DEV_STATUS = {'pre': '2 - Pre-Alpha',
 setup(
     name=PACKAGE,
     version=__version__,
-    description='JSON Schema renderer for Sphinx',
+    description='GraphML charts embedding extension for Sphinx',
     long_description=open(os.path.join('README.rst')).read(),
     author=AUTHOR,
     author_email=AUTHOR_EMAIL,
