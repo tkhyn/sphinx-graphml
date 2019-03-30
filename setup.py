@@ -14,7 +14,7 @@ AUTHOR_EMAIL = 'thomas@ksytek.com'
 URL = 'https://bitbucket.org/tkhyn/sphinx-graphml/'
 
 # imports __version__ and __version_info__ variables
-exec(open('sphinx_json_schema/version.py').read())
+exec(open('sphinx_graphml/version.py').read())
 
 dev_status = __version_info__[3]
 if dev_status == 'alpha' and not __version_info__[4]:
