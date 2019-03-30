@@ -4,6 +4,7 @@ Testing tools
 
 import os
 import sys
+import re
 from shutil import rmtree
 from unittest import TestCase
 
@@ -43,4 +44,9 @@ class SphinxBuildTestCase(TestCase):
         if self.docs_dir is None:
             raise AssertionError("No docs dir defined")
         with open(os.path.join(self.docs_dir, '_build', '%s.html' % filename), 'r') as f:
-            self.assertIn(expected_output, f.read())
+
+            if isinstance(expected_output, re._pattern_type):
+                self.assertRegexpMatches(f.read(), re.compile('.*' + expected_output.pattern),
+                                         expected_output.flags)
+            else:
+                self.assertIn(expected_output, f.read())
