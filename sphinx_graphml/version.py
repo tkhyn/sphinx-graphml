@@ -2,6 +2,8 @@
 Project versionning info
 """
 
+import re
+
 __version_info__ = (0, 1, 0, 'alpha', 0)
 
 
@@ -35,8 +37,11 @@ def get_hg_chgset():
         DEVNULL = open(os.devnull, 'wb')
 
     try:
-        return subprocess.check_output(['hg', 'id', '-i'],
-                                       stderr=DEVNULL).strip()
+
+        return re.sub(
+            '[^0-9a-f]', '',
+            subprocess.check_output(['hg', 'id', '-i'], stderr=DEVNULL).decode('utf8')
+        )
     except:
         return '?'
 
