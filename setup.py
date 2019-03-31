@@ -47,7 +47,7 @@ setup(
     ],
     packages=find_packages(),
     install_requires=(
-        'sphinx>=2.0'
+        'sphinx>=1.8'
     ),
     # static files are not available from zipped directories, so we need to set this flag to False
     zip_safe=False

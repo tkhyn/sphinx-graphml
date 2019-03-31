@@ -6,7 +6,10 @@ Creating a graphml node to add the relevant javascript element that will load th
 import posixpath
 
 from sphinx.addnodes import download_reference
+
+from sphinx.writers.html import HTMLTranslator
 from sphinx.writers.html5 import HTML5Translator
+
 from docutils.nodes import Element
 
 
@@ -16,11 +19,9 @@ class graphml_reference(download_reference):
 
 def visit_graphml_reference(self, node):
     """
-    <script type="text/javascript" language="javascript">
-        RunPlayer("height", "%(height)s", "graphURL", "%(filename)s");
-    </script>
+    Appends a javascript element calling GraphML's RunPlayer function
     """
-    if isinstance(self, HTML5Translator):
+    if isinstance(self, (HTMLTranslator, HTML5Translator)):
         atts = {'height': node['height']}
         if 'refuri' in node:
             atts['path'] = node['refuri']
