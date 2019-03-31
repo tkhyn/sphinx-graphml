@@ -46,7 +46,7 @@ class SphinxBuildTestCase(TestCase):
         with open(os.path.join(self.docs_dir, '_build', '%s.html' % filename), 'r') as f:
 
             if isinstance(expected_output, re._pattern_type):
-                self.assertRegexpMatches(f.read(), re.compile('.*' + expected_output.pattern),
-                                         expected_output.flags)
+                self.assertRegex(f.read(), re.compile('.*' + expected_output.pattern),
+                                 expected_output.flags)
             else:
                 self.assertIn(expected_output, f.read())
