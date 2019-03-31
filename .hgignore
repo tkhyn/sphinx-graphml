@@ -9,3 +9,4 @@ bin/
 # tests
 tests/.cache
 tests/src/_build
+.tox
