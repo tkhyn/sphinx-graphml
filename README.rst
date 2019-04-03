@@ -31,7 +31,7 @@ Add the extension name to your ``conf.py``::
 
 In your documentation::
 
-   .. graph:: rel/path/to/my_graph.graphml
+   .. graphml:: rel/path/to/my_graph.graphml
       :height: 500px
 
 (the default height is 300px)

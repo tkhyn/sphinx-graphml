@@ -16,7 +16,7 @@ def setup(app):
     :param app: the Sphinx app
     """
 
-    app.add_directive('graph', GraphDirective)
+    app.add_directive('graphml', GraphDirective)
     app.add_node(graphml_reference, html=(visit_graphml_reference, depart_graphml_reference))
 
     app.add_js_file('js/GraphMLViewer.js')
