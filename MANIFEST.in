@@ -1,2 +1,3 @@
 include LICENSE.rst README.rst CHANGES.rst
+recursive-include sphinx_graphml/static/js *
 recursive-exclude tests *

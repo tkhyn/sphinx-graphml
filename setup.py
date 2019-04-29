@@ -49,6 +49,8 @@ setup(
     install_requires=(
         'sphinx>=1.8'
     ),
+    package_data={PACKAGE: ['static/js/*.*']},
+    include_package_data=True,
     # static files are not available from zipped directories, so we need to set this flag to False
     zip_safe=False
 )
